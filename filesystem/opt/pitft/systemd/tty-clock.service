@@ -1,0 +1,16 @@
+[Service]
+Type=simple
+User=root
+ExecStartPre=/bin/chvt 11
+ExecStart=/usr/bin/tty-clock -S -c -C 6 -n -d 100000000
+Restart=always
+RestartSec=0
+StandardOutput=tty
+TTYPath=/dev/tty11
+TTYReset=yes
+TTYVHangup=yes
+TTYVTDisallocate=yes
+KillSignal=SIGHUP
+
+[Install]
+WantedBy=multi-user.target

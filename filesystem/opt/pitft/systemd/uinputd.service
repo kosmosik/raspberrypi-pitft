@@ -1,0 +1,13 @@
+[Unit]
+Description=Support for Uniker 2.2 TFT GPIO buttons
+
+[Service]
+Type=simple
+User=root
+ExecStart=/opt/pitft/uinputd.py
+Restart=always
+RestartSec=0
+KillSignal=SIGHUP
+
+[Install]
+WantedBy=multi-user.target
